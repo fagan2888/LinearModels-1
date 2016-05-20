@@ -218,23 +218,22 @@ def find_mse(degree):
     return result
 
 
-def plot_reg_ploy(degree):
+def plot_reg_poly(model, prediction):
     '''
-    Plots the follwoing:
+    Plots the following:
     1. A scatter plot of the "CRSDepTime" column of "df" on the x-axis
        and the "DepDelay" column of "df" on the y-axis,
     2. A line that represents a polynomial of degree "degree".
 
     Parameters
     ----------
-    degree: A degree for PolynomialFeatures
+    model: a pipeline from fit_reg_poly
+    prediction: a numpy ndarray
 
     Returns
     -------
     A matplotlib.Axes object
     '''
-
-    model, prediction = fit_reg_poly(degree)
 
     fig = plt.figure()
     ax = fig.add_subplot(111) #Create axes
